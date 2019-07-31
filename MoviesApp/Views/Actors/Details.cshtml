@@ -1,0 +1,48 @@
+﻿@model MoviesApp.Models.Actor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for @Html.DisplayNameFor(model => model.ActorName)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bio)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ActorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

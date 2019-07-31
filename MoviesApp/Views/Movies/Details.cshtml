@@ -1,0 +1,81 @@
+﻿@model MoviesApp.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for '@Html.DisplayFor(model => model.MovieName)'</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="text-align:left;">
+            @Html.DisplayNameFor(model => model.MovieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieName)
+        </dd>
+        <br />
+        <dt style="text-align:left;">
+            @Html.DisplayNameFor(model => model.YearOfRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfRelease)
+        </dd>
+        <br />
+        <dt style="text-align:left;">
+            @Html.DisplayNameFor(model => model.Plot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plot)
+        </dd>
+        <br />
+        <dt style="text-align:left;">
+            @Html.DisplayNameFor(model => model.PosterImage)
+        </dt>
+
+        <dd>
+            @if (Model.PosterImage != null)
+            {
+                <img src="@Url.Content(Model.PosterImage)" alt="Image" style="height: 200px;width: 150px;" />
+            }
+            else
+            {
+                <p>No Image Found</p>
+            }
+
+        </dd>
+        <br />
+
+        <dt style="text-align:left;">
+           Cast
+        </dt>
+
+        <dd>
+            @if (Model.Actors.Count > 0)
+            {
+                foreach (var actor in Model.Actors)
+                {
+                    @Html.DisplayFor(modelItem => actor.ActorName) <div>&nbsp;</div>
+                }
+            }
+        </dd>
+        <br />
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<style>
+    div dt {
+        text-align: left;
+    }
+
+</style>

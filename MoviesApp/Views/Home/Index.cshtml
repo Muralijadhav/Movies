@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <img src="~/Images/Banner.jpg" alt="Image" style="width: 100%" />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Movies List</h2>
+        <p>Movies List Description</p>
+        <p>
+            @Html.ActionLink("Movies", "Index", "Movies")
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Actors List</h2>
+        <p>Actors List Description</p>
+        <p>
+            @Html.ActionLink("Actors", "Index", "Actors")
+        </p>
+
+    </div>
+</div>
